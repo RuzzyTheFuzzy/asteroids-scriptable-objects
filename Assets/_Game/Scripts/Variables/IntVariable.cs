@@ -7,7 +7,7 @@ namespace Variables
     [CreateAssetMenu(fileName = "new FloatVariable", menuName = "ScriptableObjects/Variables/IntVariable")]
     public class IntVariable : ScriptableObject
     {
-        [SerializeField] private int _value;
+        public int value;
 
         private int _currentValue;
 
@@ -25,7 +25,7 @@ namespace Variables
 
         private void OnEnable()
         {
-            _currentValue = _value;
+            _currentValue = value;
         }
     }
 
@@ -37,5 +37,31 @@ namespace Variables
     public class MyIntThingie : VariableBase<int>
     {
         
+    }
+    
+    
+    // Wrapper to properly serialise IntVariable
+    [Serializable]
+    public class IntWrapper : ISerializationCallbackReceiver
+    {
+        public IntVariable variable;
+
+        public int value;
+
+        public void OnBeforeSerialize( )
+        {
+            if ( variable != null )
+                value = variable.value;
+        }
+
+        public void OnAfterDeserialize( )
+        {
+            // Incase variable value is limited
+            if ( variable != null )
+            {
+                variable.value = value;
+                value = variable.value;
+            }
+        }
     }
 }

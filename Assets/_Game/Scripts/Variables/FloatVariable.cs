@@ -8,34 +8,35 @@ using UnityEngine.UIElements;
 
 namespace Variables
 {
-    [CreateAssetMenu(fileName = "new FloatVariable", menuName = "ScriptableObjects/Variables/FloatVariable")]
+    [CreateAssetMenu( fileName = "new FloatVariable", menuName = "ScriptableObjects/Variables/FloatVariable" )]
     public class FloatVariable : ScriptableObject
     {
-        [Range(0f, 10f)] public float Value;
-        public float test = 2;
+        public float value;
     }
 
-    // Scriptable Obj can't have a custom drawer, so a wrapper is needed
+    // Make SO float variable bindable (Cause scriptable objects values arent?!?)
+    // Hours wasted: 14
     [Serializable]
-    public class FloatWrapper
+    public class FloatWrapper : ISerializationCallbackReceiver
     {
-        public FloatVariable floatVariable;
-    }
+        public FloatVariable variable;
 
-    [CustomPropertyDrawer( typeof( FloatWrapper ) )]
-    public class FloatVariableEditor : PropertyDrawer
-    {
-        public override VisualElement CreatePropertyGUI( SerializedProperty property )
+        public float value;
+
+        public void OnBeforeSerialize( )
         {
-            var container = new VisualElement();
+            if ( variable != null )
+                value = variable.value;
+        }
 
-            var original = new PropertyField( property.FindPropertyRelative( "floatVariable" ) );
-            var value = new PropertyField( property.FindPropertyRelative( "floatVariable.test" ) );
-            
-            container.Add(original);
-            container.Add(value);
-
-            return container;
+        public void OnAfterDeserialize( )
+        {
+            // Incase variable value is limited
+            if ( variable != null )
+            {
+                variable.value = value;
+                value = variable.value;
+            }
         }
     }
 }

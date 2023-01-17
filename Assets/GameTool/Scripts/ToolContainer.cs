@@ -4,11 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Variables;
 
+
 // Scriptable object so we can bind values with the ui builder
 
-[CreateAssetMenu(fileName = "Tool Container", menuName = "ScriptableObjects/ToolSO", order = 0)]
+[CreateAssetMenu( fileName = "Tool Container", menuName = "ScriptableObjects/ToolSO", order = 0 )]
 public class ToolContainer : ScriptableObject
 {
-    [SerializeField] public FloatWrapper thrust;
-    
+    public FloatWrapper forwardThrust;
+    public FloatWrapper rotationThrust;
+    public IntWrapper startHealth;
+    public FloatWrapper laserSpeed;
+    public FloatWrapper gunDelay;
+    public FloatWrapper minAsteroidTime;
+    public FloatWrapper maxAsteroidTime;
+    public IntWrapper minAsteroidAmount;
+    public IntWrapper maxAsteroidAmount;
 }

@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Foldout text="Engine" value="false">
+        <ui:Slider picking-mode="Ignore" label="Forwards Thrust" value="42" high-value="100" binding-path="forwardThrust.value" show-input-field="true" />
+        <ui:Slider picking-mode="Ignore" label="Rotational Thrust" value="5" high-value="20" binding-path="rotationThrust.value" show-input-field="true" />
+    </ui:Foldout>
+    <ui:Foldout text="Hull" value="false">
+        <ui:IntegerField label="Start Health" value="10" is-delayed="true" binding-path="startHealth.value" readonly="false" tooltip="Should be atleast one" />
+    </ui:Foldout>
+    <ui:Foldout text="Gun" value="false">
+        <ui:Slider picking-mode="Ignore" label="Projectile Speed" value="0.2" high-value="1" binding-path="laserSpeed.value" show-input-field="true" low-value="0" />
+        <ui:Slider picking-mode="Ignore" label="Fire Delay" value="42" high-value="5" show-input-field="true" tooltip="Time in seconds between shots" binding-path="gunDelay.value" />
+    </ui:Foldout>
+    <ui:Foldout text="Asteriods">
+        <ui:Label tabindex="-1" text="Spawn Time" display-tooltip-when-elided="true" />
+        <ui:Slider picking-mode="Ignore" label="Max" value="10" high-value="100" show-input-field="true" binding-path="maxAsteroidTime.value" />
+        <ui:Slider picking-mode="Ignore" label="Min" value="0" high-value="100" show-input-field="true" binding-path="minAsteroidTime.value" />
+        <ui:Label tabindex="-1" text="Spawn Amount" display-tooltip-when-elided="true" />
+        <ui:SliderInt picking-mode="Ignore" label="Max" value="10" high-value="100" show-input-field="true" binding-path="maxAsteroidAmount.value" />
+        <ui:SliderInt picking-mode="Ignore" label="Min" value="0" high-value="100" show-input-field="true" binding-path="minAsteroidAmount.value" />
+    </ui:Foldout>
+</ui:UXML>
