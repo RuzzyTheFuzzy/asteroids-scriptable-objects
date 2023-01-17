@@ -1,5 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <ui:Label tabindex="-1" text="Test and such and such" display-tooltip-when-elided="true" />
-    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" binding-path="thrust.Value" show-input-field="true" />
-    <uie:PropertyField binding-path="thrust.Value" />
-</ui:UXML>

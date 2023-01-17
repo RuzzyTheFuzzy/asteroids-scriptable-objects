@@ -3,6 +3,7 @@ using Asteroids;
 using DefaultNamespace.ScriptableEvents;
 using RuntimeSets;
 using UnityEngine;
+using Variables;
 
 namespace Ship
 {
@@ -13,7 +14,7 @@ namespace Ship
         private LaserRuntimeSet _lasers;
 
         [Header("Values:")]
-        [SerializeField] private float _speed = 0.2f;
+        [SerializeField] private FloatVariable _speed;
 
         private Rigidbody2D _rigidbody;
 
@@ -32,7 +33,7 @@ namespace Ship
         private void FixedUpdate()
         {
             var trans = transform;
-            _rigidbody.MovePosition(trans.position + trans.up * _speed);
+            _rigidbody.MovePosition(trans.position + trans.up * _speed.value);
         }
     }
 }
