@@ -245,10 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _asteroidPrefab: {fileID: 1784223117350305363, guid: 01106835b2bc0e347a3bb06b7544b51a, type: 3}
-  _minSpawnTime: {fileID: 11400000, guid: eb1d67c6f9c0e314e82fc205a805ea0c, type: 2}
-  _maxSpawnTime: {fileID: 11400000, guid: 72efdbd50e0a3b248b8acdf1f5423475, type: 2}
-  _minAmount: {fileID: 11400000, guid: 00927dcfc15aae74083c7980589061c2, type: 2}
-  _maxAmount: {fileID: 11400000, guid: 1fdaa4630c4d8fc43abe2101832edd82, type: 2}
+  _time: {fileID: 11400000, guid: a85e04b2ae7fe914caced8d20afd4eb6, type: 2}
+  _amount: {fileID: 11400000, guid: 19f25aea6263f4d4286c99c8e42620ba, type: 2}
 --- !u!4 &1867257717
 Transform:
   m_ObjectHideFlags: 0

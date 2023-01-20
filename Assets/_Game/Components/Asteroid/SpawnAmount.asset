@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 395422e491154d9abcceab7c93aaef7d, type: 3}
-  m_Name: MaxAstroidTime
+  m_Script: {fileID: 11500000, guid: 3916c7410aa94b649bfacd897e779a83, type: 3}
+  m_Name: SpawnAmount
   m_EditorClassIdentifier: 
-  value: 0
+  value: {x: 0, y: 0}

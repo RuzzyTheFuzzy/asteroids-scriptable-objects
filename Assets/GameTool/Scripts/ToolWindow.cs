@@ -9,37 +9,40 @@ using Variables;
 
 // Displays the inspector for the tool container in a seperate window
 // Couldn't bind the values in the UI Builder otherwise
-public class ToolWindow : EditorWindow
+namespace GameTool
 {
-    private string containerPath = "Assets/GameTool/Tool Container.asset";
-    private ToolContainer container;
-
-    // Make tool accessable from window tab
-    [MenuItem( "Tools/Game Tool" )]
-    public static void Init( )
+    public class ToolWindow : EditorWindow
     {
-        //Show existing window instance. If one doesn't exist, make one.
-        var window = GetWindow( typeof( ToolWindow ), false, "Game Tool" );
-        window.Show();
-    }
+        private string containerPath = "Assets/GameTool/Tool Container.asset";
+        private ToolContainer container;
 
-    private void CreateGUI( )
-    {
-        // Load via path as scripts dont keep refs on runtime
-        if ( container == null )
-            container = AssetDatabase.LoadAssetAtPath<ToolContainer>( containerPath );
-
-        if ( container == null )
+        // Make tool accessable from window tab
+        [MenuItem( "Tools/Game Tool" )]
+        public static void Init( )
         {
-            Debug.LogError( "ToolContainer Path is invalid!" );
-            return;
+            //Show existing window instance. If one doesn't exist, make one.
+            var window = GetWindow( typeof( ToolWindow ), false, "Game Tool" );
+            window.Show();
         }
 
-        var root = new VisualElement();
-        var inspector = new InspectorElement( container ); // Create the inspector
+        private void CreateGUI( )
+        {
+            // Load via path as scripts dont keep refs on runtime
+            if ( container == null )
+                container = AssetDatabase.LoadAssetAtPath<ToolContainer>( containerPath );
 
-        root.Add( inspector );
+            if ( container == null )
+            {
+                Debug.LogError( "ToolContainer Path is invalid!" );
+                return;
+            }
 
-        rootVisualElement.Add( root );
+            var root = new VisualElement();
+            var inspector = new InspectorElement( container ); // Create the inspector
+
+            root.Add( inspector );
+
+            rootVisualElement.Add( root );
+        }
     }
 }

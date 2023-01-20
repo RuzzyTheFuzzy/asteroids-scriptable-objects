@@ -1,21 +1,35 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <ui:Foldout text="Engine" value="false">
-        <ui:Slider picking-mode="Ignore" label="Forwards Thrust" value="42" high-value="100" binding-path="forwardThrust.value" show-input-field="true" />
+    <ui:GroupBox text="Engine">
+        <ui:Slider picking-mode="Ignore" label="Forwards Thrust" value="42" high-value="30" binding-path="forwardThrust.value" show-input-field="true" />
         <ui:Slider picking-mode="Ignore" label="Rotational Thrust" value="5" high-value="20" binding-path="rotationThrust.value" show-input-field="true" />
-    </ui:Foldout>
-    <ui:Foldout text="Hull" value="false">
+    </ui:GroupBox>
+    <ui:GroupBox text="Hull">
         <ui:IntegerField label="Start Health" value="10" is-delayed="true" binding-path="startHealth.value" readonly="false" tooltip="Should be atleast one" />
-    </ui:Foldout>
-    <ui:Foldout text="Gun" value="false">
+    </ui:GroupBox>
+    <ui:GroupBox text="Gun">
         <ui:Slider picking-mode="Ignore" label="Projectile Speed" value="0.2" high-value="1" binding-path="laserSpeed.value" show-input-field="true" low-value="0" />
         <ui:Slider picking-mode="Ignore" label="Fire Delay" value="42" high-value="5" show-input-field="true" tooltip="Time in seconds between shots" binding-path="gunDelay.value" />
-    </ui:Foldout>
-    <ui:Foldout text="Asteriods">
-        <ui:Label tabindex="-1" text="Spawn Time" display-tooltip-when-elided="true" />
-        <ui:Slider picking-mode="Ignore" label="Max" value="10" high-value="100" show-input-field="true" binding-path="maxAsteroidTime.value" />
-        <ui:Slider picking-mode="Ignore" label="Min" value="0" high-value="100" show-input-field="true" binding-path="minAsteroidTime.value" />
-        <ui:Label tabindex="-1" text="Spawn Amount" display-tooltip-when-elided="true" />
-        <ui:SliderInt picking-mode="Ignore" label="Max" value="10" high-value="100" show-input-field="true" binding-path="maxAsteroidAmount.value" />
-        <ui:SliderInt picking-mode="Ignore" label="Min" value="0" high-value="100" show-input-field="true" binding-path="minAsteroidAmount.value" />
-    </ui:Foldout>
+    </ui:GroupBox>
+    <ui:GroupBox text="Asteroids">
+        <ui:GroupBox text="Spawn Time">
+            <ui:Slider picking-mode="Ignore" label="Max" value="10" high-value="10" show-input-field="true" binding-path="spawnTime.value.y" />
+            <ui:Slider picking-mode="Ignore" label="Min" value="0" high-value="10" show-input-field="true" binding-path="spawnTime.value.x" />
+        </ui:GroupBox>
+        <ui:GroupBox text="Spawn Amount">
+            <ui:SliderInt picking-mode="Ignore" label="Max" value="10" high-value="100" show-input-field="true" binding-path="spawnAmount.value.y" />
+            <ui:SliderInt picking-mode="Ignore" label="Min" value="0" high-value="100" show-input-field="true" binding-path="spawnAmount.value.x" />
+        </ui:GroupBox>
+        <ui:GroupBox text="Force">
+            <ui:Slider picking-mode="Ignore" label="Max" value="10" high-value="10" show-input-field="true" binding-path="asteroidForce.value.y" />
+            <ui:Slider picking-mode="Ignore" label="Min" value="0" high-value="10" show-input-field="true" binding-path="asteroidForce.value.x" />
+        </ui:GroupBox>
+        <ui:GroupBox text="Size">
+            <ui:Slider picking-mode="Ignore" label="Max" value="10" high-value="1" show-input-field="true" binding-path="asteroidSize.value.y" low-value="0.1" />
+            <ui:Slider picking-mode="Ignore" label="Min" value="0" high-value="1" show-input-field="true" binding-path="asteroidSize.value.x" low-value="0.1" />
+        </ui:GroupBox>
+        <ui:GroupBox text="Torque">
+            <ui:Slider picking-mode="Ignore" label="Max" value="10" high-value="5" show-input-field="true" binding-path="asteroidTorque.value.y" />
+            <ui:Slider picking-mode="Ignore" label="Min" value="0" high-value="5" show-input-field="true" binding-path="asteroidTorque.value.x" />
+        </ui:GroupBox>
+    </ui:GroupBox>
 </ui:UXML>

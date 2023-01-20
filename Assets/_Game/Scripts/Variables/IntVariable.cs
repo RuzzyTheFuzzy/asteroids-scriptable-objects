@@ -39,29 +39,4 @@ namespace Variables
         
     }
     
-    
-    // Wrapper to properly serialise IntVariable
-    [Serializable]
-    public class IntWrapper : ISerializationCallbackReceiver
-    {
-        public IntVariable variable;
-
-        public int value;
-
-        public void OnBeforeSerialize( )
-        {
-            if ( variable != null )
-                value = variable.value;
-        }
-
-        public void OnAfterDeserialize( )
-        {
-            // Incase variable value is limited
-            if ( variable != null )
-            {
-                variable.value = value;
-                value = variable.value;
-            }
-        }
-    }
 }

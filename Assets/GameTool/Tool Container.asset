@@ -14,28 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardThrust:
     variable: {fileID: 11400000, guid: beb4542c9c678f14cb3e3a74aead4314, type: 2}
-    value: 100
+    value: 10.27
   rotationThrust:
     variable: {fileID: 11400000, guid: eb6f17e4493560c4b9750572ccc4f906, type: 2}
-    value: 1.1
+    value: 1.33
   startHealth:
     variable: {fileID: 11400000, guid: a29c193f4c943534ab4728aacaf9839a, type: 2}
     value: 50
   laserSpeed:
     variable: {fileID: 11400000, guid: 170ba2fdd1bc7fc4280303c0007f8526, type: 2}
-    value: 0.047
+    value: 1
   gunDelay:
     variable: {fileID: 11400000, guid: d67f955027dc32541a3d8069e586791f, type: 2}
     value: 0
-  minAsteroidTime:
-    variable: {fileID: 11400000, guid: eb1d67c6f9c0e314e82fc205a805ea0c, type: 2}
-    value: 0
-  maxAsteroidTime:
-    variable: {fileID: 11400000, guid: 72efdbd50e0a3b248b8acdf1f5423475, type: 2}
-    value: 2.7
-  minAsteroidAmount:
-    variable: {fileID: 11400000, guid: 00927dcfc15aae74083c7980589061c2, type: 2}
-    value: 0
-  maxAsteroidAmount:
-    variable: {fileID: 11400000, guid: 1fdaa4630c4d8fc43abe2101832edd82, type: 2}
-    value: 3
+  spawnTime:
+    variable: {fileID: 11400000, guid: a85e04b2ae7fe914caced8d20afd4eb6, type: 2}
+    value: {x: 0, y: 10.1}
+  spawnAmount:
+    variable: {fileID: 11400000, guid: 19f25aea6263f4d4286c99c8e42620ba, type: 2}
+    value: {x: 0, y: 3}
+  asteroidForce:
+    variable: {fileID: 11400000, guid: ea19df7a459962a40bfe64d192604d82, type: 2}
+    value: {x: 3.5, y: 10}
+  asteroidSize:
+    variable: {fileID: 11400000, guid: c383e4fe0f6009742a9160b804d48d5e, type: 2}
+    value: {x: 0.303, y: 2.2}
+  asteroidTorque:
+    variable: {fileID: 11400000, guid: 94c1683bcce61cc439f4754112525710, type: 2}
+    value: {x: 0, y: 2.7}
